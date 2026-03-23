@@ -9,11 +9,12 @@
     "start": "NODE_OPTIONS='--require ./node-compat.cjs' next start",
     "lint": "next lint",
     "test": "vitest",
-    "setup": "npm install && npx prisma generate && npx prisma migrate dev",
+    "setup": "npm install && npx prisma generate && npx prisma migrate dev && node ./scripts/init-claude.js",
     "db:reset": "npx prisma migrate reset --force"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "1.2.12",
+    "@anthropic-ai/claude-agent-sdk": "^0.2.81",
     "@babel/standalone": "^7.27.6",
     "@monaco-editor/react": "^4.7.0",
     "@prisma/client": "^6.10.1",
